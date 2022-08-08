@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login into DJango</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 3px;;
+            margin: 0;
+            box-sizing:border-box;
+        }
+        body{
+            background-color: rgb(194, 152, 152);
+
+        }
+        
+       .row{
+           background-color: black;
+           border-radius: 20px;
+       }        
+       img{
+           border-top-left-radius: 30px;
+           border-bottom-left-radius: 30px;
+       }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        {{info}}
+        <div class="row justify-content-center">
+            <section class="form my-2 mx-3">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-lg-5">
+                            <img src="{% static 'marvel.jpg' %}" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-7 col-md-10 col-sm-12 px-5 pt-5">
+                            <h1 class="text-light py-2">Logo</h1>   
+                          <form class="col-lg-8 col-md-10 col-sm-12 shadow p-1" method="POST">
+                              {%csrf_token%}
+                              <div class="form-row">
+                                 <div class="form group">
+                                     <label for="username"><p class="text-light py-1">Username</p></label>
+                                      <input type="text" name="username" placeholder="Username here" class="form-control"  />
+                                  </div>
+                               </div>
+                              <div class="form-row"> 
+                                 <div class="form group">
+                                     <label for="passw"><p class="text-light py-1">Password</p></label>
+                                     <input type="password" name="passw" placeholder="*************" class="form-control" />
+                                  </div>
+                               </div>    
+                               <div class="row justify-content-around mt-3">
+                                   <button class="col-4 btn btn-outline-success">
+                                      <i class="bi bi-box-arrow-in-right"></i>
+                                   </button>
+                                   <button class="col-4 btn btn-outline-dark">
+                                        <i class="bi bi-x-square-fill"></i>
+                                   </button>
+                               </div>
+                               <a href="https://www.website.com/forgot-password/?source=SC&country=IN">Forgot password?</a>
+                               <p class="text-secondary">Don't  have an account?<a href="#">Register here</a></p>
+                           </form>
+                       </div> 
+                   </div>
+              </div>
+            </section>
+        </div>   
+    </body>
+</html>
